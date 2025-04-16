@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --bg-clr: hsl(180, 47%, 31%);
+  --date-clr: hsl(18, 100%, 66%);
+  --date-clr-accordion: hsl(18, 100%, 90%);
+}
+
+body {
+  background-color: var(--bg-clr);
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header {
+  min-width: 80%;
+  position: sticky;
+  top: 0;
+}
+
+.globalAddTaskBtn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  padding: 5px;
+  position: fixed;
+  left: 5px;
+  top: 15px;
+  z-index: 2;
+}
+
+.globalAddTaskBtn:hover {
+  color: var(--date-clr);
+}
+
+#searchTask {
+  border-radius: 10px;
+  border: none;
+  min-width: 100%;
+  padding: 10px 10px;
+}
+
+#searchTask:focus {
+  outline: 2px solid var(--date-clr);
+}
+
+.calendarArea {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dateContainer {
+  background-color: var(--date-clr);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.accordion {
+  background-color: var(--date-clr-accordion);
+  padding: 10px 20px;
+  overflow-y: auto;
+  max-height: 300px;
+  border-radius: 10px;
+  margin-top: -10px;
+  display: none;
+}
+
+.accordionToggled {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.accordionToggledDate {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.addTaskBtn {
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.addTaskBtn:hover {
+  background-color: var(--date-clr);
+}
+
+.taskList {
+  min-height: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taskItem {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.priorityBuble {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.categoryLabel {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 8px;
+  color: white;
+  font-weight: normal;
+}
+
+
+.overdueDay {
+  background-color: #FF6B6B !important;
+  color: white;
+  font-weight: bold;
+}
+
+.inputTaskBox .formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formContainer div {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer label {
+  font-weight: bold;
+}
+
+.formContainer input,
+.formContainer select,
+.formContainer textarea {
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.formContainer input:focus,
+.formContainer select:focus,
+.formContainer textarea:focus {
+  outline: 2px solid var(--date-clr);
+  border-color: var(--date-clr);
+}
+
+.inputTaskBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  min-width: 300px;
+}
+
+.containerTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-clr);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.taskDetailsContainer {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.taskDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.taskDetails p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.task-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.viewDetailsBtn,
+.returnBtn {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #008080;
+  color: white;
+}
+
+.categoryLabel.New-Landscaping { background-color: #4CAF50; }
+.categoryLabel.Site-Clearing { background-color: #FF9800; }
+.categoryLabel.Plant-Maintenance { background-color: #2196F3; }
+.categoryLabel.Grass-Maintenance { background-color: #9C27B0; }
+.categoryLabel.General-Maintenance { background-color: #795548; }
+
+/* Priority label bubble colors */
+.priorityBuble {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.categoryLabel {
+  background-color: #e0e0e0;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.button {
+  background-color: #93c5a0;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
